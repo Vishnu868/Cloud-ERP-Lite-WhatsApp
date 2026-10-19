@@ -1,4 +1,19 @@
-const [orderItems, setOrderItems] = useState([
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { orderAPI, productAPI } from '../../services/api';
+import { ArrowLeft, Plus, Trash2 } from 'lucide-react';
+import toast from 'react-hot-toast';
+
+const OrderForm = () => {
+  const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
+  const [formData, setFormData] = useState({
+    customerName: '',
+    customerPhone: '',
+    customerEmail: '',
+    notes: '',
+  });
+  const [orderItems, setOrderItems] = useState([
     { productId: '', quantity: 1, product: null },
   ]);
   const [loading, setLoading] = useState(false);
@@ -278,4 +293,4 @@ const [orderItems, setOrderItems] = useState([
   );
 };
 
-export default OrderForm;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+export default OrderForm;

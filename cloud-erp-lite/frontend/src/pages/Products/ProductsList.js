@@ -1,4 +1,16 @@
-const [searchTerm, setSearchTerm] = useState('');
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { productAPI } from '../../services/api';
+import { Plus, Search, Edit, Trash2, Package } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { useAuth } from '../../contexts/AuthContext';
+
+const ProductsList = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState({
     category: '',
     status: '',
@@ -230,4 +242,4 @@ const [searchTerm, setSearchTerm] = useState('');
   );
 };
 
-export default ProductsList;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+export default ProductsList;
