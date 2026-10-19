@@ -2,7 +2,6 @@
 
 A lightweight cloud ERP for small businesses. Staff manage products, orders, invoices, employees and leave requests from a web dashboard, and can run the same day-to-day tasks from **WhatsApp** by texting simple commands to a Twilio-powered bot.
 
-> Semester 5 – Cloud Computing project.
 
 ## Features
 
